@@ -1,42 +1,37 @@
 {
-	"name": "BoilerPlate",
+	"name": "Warkdown",
 	"author": [
-		"Your Name"
+		"Ionuț Bizău"
 	],
-	"url": "https://www.mediawiki.org/wiki/Extension:BoilerPlate",
-	"descriptionmsg": "boilerplate-desc",
+	"url": "https://github.com/ibz/warkdown/",
+	"descriptionmsg": "A markdown extension for MediaWiki",
 	"license-name": "GPL-2.0-or-later",
-	"type": "other",
+	"type": "parserhook",
 	"requires": {
-		"MediaWiki": ">= 1.32.0"
+		"MediaWiki": ">= 1.30.0"
 	},
-	"AutoloadNamespaces": {
-		"MediaWiki\\Extension\\BoilerPlate\\": "includes/"
+	"AutoloadClasses": {
+		"Warkdown": "includes/Warkdown.php",
+		"Parsedown": "lib/Parsedown/Parsedown.php"
 	},
 	"config": {
-		"BoilerPlateEnableFoo": {
-			"description": "Enable the Foo feature.",
-			"value": true
-		},
-		"BoilerPlateVandalizeEachPage": {
-			"description": "Write 'BoilerPlate was here' on each page",
-			"value": false
-		}
 	},
 	"Hooks": {
-		"BeforePageDisplay": "MediaWiki\\Extension\\BoilerPlate\\Hooks::onBeforePageDisplay"
+		"ParserFirstCallInit": [
+			"Warkdown::init"
+		]
 	},
 	"MessagesDirs": {
-		"BoilerPlate": [
+		"Warkdown": [
 			"i18n"
 		]
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "resources",
-		"remoteExtPath": "BoilerPlate/resources"
+		"remoteExtPath": "Warkdown/resources"
 	},
 	"ResourceModules": {
-		"ext.boilerPlate": {
+		"ext.warkdown": {
 			"dependencies": [],
 			"messages": [],
 			"styles": [],
