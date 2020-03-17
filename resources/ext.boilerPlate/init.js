@@ -1,10 +1,10 @@
 ( function () {
 
 	/**
-	 * @class mw.boilerPlate
+	 * @class mw.warkdown
 	 * @singleton
 	 */
-	mw.boilerPlate = {
+	mw.warkdown = {
 	};
 
 }() );
